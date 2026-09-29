@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Toy Haven secure checkout simulation.">
+  <meta name="theme-color" content="#172554">
+  <title>Toy Haven | Checkout</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+  <header class="site-header">
+    <a class="brand" href="index.html">TOY HAVEN</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a href="products.html">Products</a><a href="wishlist.html">Wishlist</a>
+      <a class="active" href="cart.html">Cart <span class="cart-count">0</span></a><a href="support.html">Support</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-intro reveal">
+      <p class="eyebrow">ALMOST THERE</p>
+      <h1>Secure Checkout</h1>
+      <p>Complete your details to place your simulated order.</p>
+    </section>
+
+    <section class="checkout-layout section compact-section">
+      <form id="checkout-form" class="form-card" novalidate>
+        <h2>Customer Details</h2>
+        <div class="field">
+          <label for="full-name">Full Name</label>
+          <input id="full-name" name="fullName" type="text" autocomplete="name" required>
+          <small class="error-text" data-error-for="full-name"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <small class="error-text" data-error-for="email"></small>
+        </div>
+        <div class="field">
+          <label for="address">Delivery Address</label>
+          <input id="address" name="address" type="text" autocomplete="address-line1" required>
+          <small class="error-text" data-error-for="address"></small>
+        </div>
+        <div class="field">
+          <label for="payment">Payment Method</label>
+          <select id="payment" name="payment" required>
+            <option value="">Choose a method</option>
+            <option>Card</option>
+            <option>Cash on Delivery</option>
+          </select>
+          <small class="error-text" data-error-for="payment"></small>
+        </div>
+        <button class="btn" type="submit">PLACE ORDER</button>
+      </form>
+
+      <aside class="summary-card">
+        <h2>Order Summary</h2>
+        <div id="checkout-items"></div>
+        <hr>
+        <div class="summary-total"><span>Total</span><strong id="checkout-total">$0.00</strong></div>
+        <div id="checkout-success" class="success-message hidden" role="status">
+          ✓ Order confirmed! Thank you for shopping at Toy Haven.
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="js/products-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

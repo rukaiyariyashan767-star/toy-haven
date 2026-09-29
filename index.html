@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- RESPONSIVE: tells the browser to size the page correctly on phones/tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Toy Haven - collectible figurines, toys, board games and diecast models.">
+  <meta name="theme-color" content="#172554">
+
+  <title>Toy Haven | Home</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="assets/truck.jpg" type="image/svg+xml">
+
+  <!-- PWA MANIFEST -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- SHARED STYLESHEET: controls the appearance of the whole website -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="home">
+
+<!-- =====================================================
+     HEADER / NAVIGATION
+     Desktop = normal navigation
+     Mobile = hamburger menu controlled by JavaScript
+     ===================================================== -->
+<header class="site-header">
+  <a class="brand" href="index.html">TOY HAVEN</a>
+
+  <!-- MOBILE MENU BUTTON -->
+  <button class="menu-toggle"
+          aria-label="Open navigation"
+          aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="active" href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="cart.html">Cart <span class="cart-count">0</span></a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<main class="home-main">
+
+  <!-- ===================================================
+       HERO SECTION
+       JavaScript automatically rotates the promotional
+       text. The toy images make the home page visually full.
+       =================================================== -->
+  <section class="hero hero-full" aria-label="Toy Haven promotions">
+
+    <div class="hero-copy">
+      <p class="eyebrow">A LITTLE JOY FOR EVERY SHELF</p>
+
+      <h1 id="hero-title">FAVOURITE TOYS FOR EVERY FAN</h1>
+
+      <p id="hero-text">
+        Discover collectibles, building sets, games and diecast models all in one place.
+      </p>
+
+      <!-- CTA = Call To Action -->
+      <a class="btn" href="products.html">SHOP NOW <span aria-hidden="true">→</span></a>
+    </div>
+
+    <!-- TOY WALL: these are decorative product images -->
+    <div class="hero-toy-wall" id="hero-art" aria-hidden="true">
+      <div class="hero-product hero-p1">
+        <img src="assets/spiderman.jpg" alt="">
+      </div>
+
+      <div class="hero-product hero-p2">
+        <img src="assets/batman.jpg" alt="">
+      </div>
+
+      <div class="hero-product hero-p3">
+        <img src="assets/lego-city.jpg" alt="">
+      </div>
+
+      <div class="hero-product hero-p4">
+        <img src="assets/monopoly.jpg" alt="">
+      </div>
+
+      <div class="hero-product hero-p5">
+        <img src="assets/bmw.jpg" alt="">
+      </div>
+    </div>
+
+    <!-- JavaScript creates the slide buttons here -->
+    <div class="hero-dots" id="hero-dots" role="group" aria-label="Promotion slides"></div>
+  </section>
+
+
+  <!-- ===================================================
+       CATEGORY SHORTCUTS
+       Clicking a category takes the user to Products.
+       =================================================== -->
+  <section class="home-section reveal">
+
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">SHOP BY CATEGORY</p>
+        <h2>Find Your Favourite</h2>
+      </div>
+    </div>
+
+    <div class="category-cards">
+
+      <a class="category-card" href="products.html?category=Figurines">
+        <img src="assets/batman.jpg" alt="Figurines">
+        <span>Figurines</span>
+      </a>
+
+      <a class="category-card" href="products.html?category=Toys">
+        <img src="assets/lego-city.jpg" alt="Toys">
+        <span>Toys</span>
+      </a>
+
+      <a class="category-card" href="products.html?category=Board%20Games">
+        <img src="assets/monopoly.jpg" alt="Board Games">
+        <span>Board Games</span>
+      </a>
+
+      <a class="category-card" href="products.html?category=Diecast%20Cars">
+        <img src="assets/ferrari.jpg" alt="Diecast Cars">
+        <span>Diecast Cars</span>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================
+       PRODUCT OF THE DAY
+       JavaScript selects a product based on the date.
+       This supports the assignment's Product of the Day mark.
+       =================================================== -->
+  <section class="home-section reveal">
+
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">TODAY'S PICK</p>
+        <h2>Product of the Day</h2>
+      </div>
+
+      <a class="text-link" href="products.html">View all products →</a>
+    </div>
+
+    <!-- JavaScript inserts the selected product here -->
+    <div id="featured-product" class="product-grid featured-grid"></div>
+  </section>
+
+
+  <!-- ===================================================
+       FULL PRODUCT COLLECTION
+       JavaScript reads PRODUCTS from products-data.js
+       and creates the cards automatically.
+       =================================================== -->
+  <section class="home-section reveal">
+
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">EXPLORE THE HAVEN</p>
+        <h2>Popular Toys & Collectibles</h2>
+      </div>
+    </div>
+
+    <!-- JavaScript inserts ALL products here -->
+    <div id="home-product-grid" class="product-grid home-product-grid"></div>
+  </section>
+
+
+  <!-- ===================================================
+       PROMOTIONAL STRIP
+       =================================================== -->
+  <section class="promo-strip reveal">
+
+    <div>
+      <p class="eyebrow">COLLECT MORE. PLAY MORE.</p>
+
+      <h2>Something for every kind of toy fan.</h2>
+
+      <p>
+        From display-worthy figures to family game nights,
+        your next favourite is waiting.
+      </p>
+    </div>
+
+    <a class="btn" href="products.html">EXPLORE COLLECTION</a>
+  </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     Newsletter email is saved using localStorage.
+     ===================================================== -->
+<footer class="site-footer">
+
+  <div>
+    <strong>TOY HAVEN</strong>
+    <p>Collect, play, discover.</p>
+  </div>
+
+  <div>
+    <h3>Quick links</h3>
+    <a href="products.html">Products</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="cart.html">Cart</a>
+    <a href="support.html">Support</a>
+  </div>
+
+  <form id="newsletter-form" class="newsletter">
+
+    <h3>Join the Haven</h3>
+    <p>Get new arrivals and offers.</p>
+
+    <label class="sr-only" for="newsletter-email">
+      Email address
+    </label>
+
+    <div class="inline-form">
+      <input id="newsletter-email"
+             type="email"
+             placeholder="you@example.com"
+             required>
+
+      <button class="btn" type="submit">Subscribe</button>
+    </div>
+
+    <small id="newsletter-message" class="form-message"></small>
+  </form>
+
+</footer>
+
+<!-- Small notification used by JavaScript -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- PRODUCT DATA MUST LOAD BEFORE app.js -->
+<script src="js/products-data.js"></script>
+
+<!-- MAIN JAVASCRIPT -->
+<script src="js/app.js"></script>
+
+</body>
+</html>
