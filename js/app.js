@@ -232,6 +232,7 @@ function openProductModal(id) {
             <option ${current==="Interested"?"selected":""}>Interested</option>
             <option ${current==="Owned"?"selected":""}>Owned</option>
             <option ${current==="Not Interested"?"selected":""}>Not Interested</option>
+            <option ${current==="Future BY"?"selected":""}>Future BY</option>
           </select>
         </div>
         <button class="btn full-width" data-add-cart="${product.id}">ADD TO CART</button>
